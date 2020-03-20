@@ -95,7 +95,7 @@ def enrichV1():
       run = False # decided to never loop, cron will restart anyhows
   return(tagsSet,rT)
 
-def queryFromConfig(line,index="beacondb"):
+def queryFromConfig(line,index="implantsdb"):
  lineA = line.split(';')
  q = lineA[0]
  f1 = lineA[1]
@@ -291,7 +291,7 @@ if __name__ == '__main__':
     #while numRes > 0:
     #sys.stdout.write('.')
     #sys.stdout.flush()
-    r,rT=queryFromConfig(item,"beacondb")
+    r,rT=queryFromConfig(item,"implantsdb")
     setTags('testsystems_v01',r)
     r2,rT2=queryFromConfig(item,"rtops-*")
     setTags('testsystems_v01',r2)
@@ -306,7 +306,7 @@ if __name__ == '__main__':
   rTt = 0
   for item in sandboxes:
     numRes = 0
-    r,rT=queryFromConfig(item,"beacondb")
+    r,rT=queryFromConfig(item,"implantsdb")
     setTags('sandboxes_v01',r)
     r2,rT2=queryFromConfig(item,"rtops-*")
     setTags('sandboxes_v01',r2)
