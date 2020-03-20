@@ -127,7 +127,7 @@ if [ $ERROR -ne 0 ]; then
 fi
 
 echo "Copying new config file"
-cp ./filebeat/filebeat.yml /etc/filebeat/ >> $LOGFILE 2>&1
+cp ./filebeat/filebeat_cobaltstrike.yml /etc/filebeat/ >> $LOGFILE 2>&1
 ERROR=$?
 if [ $ERROR -ne 0 ]; then
     echoerror "Could not copy filebeat config (Error Code: $ERROR)."
@@ -218,8 +218,8 @@ if [ $ERROR -ne 0 ]; then
 fi
 
 echo "Creating crontab for local rscync of cobaltstrike logs"
-if [ ! -f /etc/cron.d/redelk ]; then
-    cp ./cron.d/redelk /etc/cron.d/redelk >> $LOGFILE 2>&1
+if [ ! -f /etc/cron.d/redelk_cobaltstrike ]; then
+    cp ./cron.d/redelk_cobaltstrike /etc/cron.d/redelk_cobaltstrike >> $LOGFILE 2>&1
 fi
 ERROR=$?
 if [ $ERROR -ne 0 ]; then
