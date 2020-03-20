@@ -33,7 +33,7 @@ def isIP(addr):
 #### code for enrich_V1 tags
 def getInitialBeaconLine(l1):
   q2 = {'query': {'query_string': {'query': 'FILLME'}}}
-  q2['query']['query_string']['query'] = "beacon_id:\"%s\" AND cslogtype:beacon_newbeacon AND beat.name:%s"%(l1['_source']['beacon_id'],l1["_source"]['beat']['name'])
+  q2['query']['query_string']['query'] = "beacon_id:\"%s\" AND c2logtype:beacon_newbeacon AND beat.name:%s"%(l1['_source']['beacon_id'],l1["_source"]['beat']['name'])
   r2 = es.search(index="rtops-*", size=qSize,body=q2)
   b = r2['hits']['hits'][0]
   #now we have a beacon
@@ -59,8 +59,8 @@ def enrichAllLinesWithBeacon(l1,b):
   return(tagsSet,r3['hits']['total'])
 
 def getSet():
-  #NOT tags:enriched_v01 AND NOT cslogtype:beacon_newbeacon AND cslogtype:beacon_*
-  q3 = {'query': {'query_string': {'query': 'NOT tags:enriched_v01 AND NOT cslogtype:beacon_newbeacon AND (cslogtype:beacon_* OR cslogtype:ioc) AND NOT source:*unknown*'}}}
+  #NOT tags:enriched_v01 AND NOT c2logtype:beacon_newbeacon AND c2logtype:beacon_*
+  q3 = {'query': {'query_string': {'query': 'NOT tags:enriched_v01 AND NOT c2logtype:beacon_newbeacon AND (c2logtype:beacon_* OR c2logtype:ioc) AND NOT source:*unknown*'}}}
   r3 = es.search(index="rtops-*", size=qSize, body=q3)
   if(r3['hits']['total'] == 0):
     return(None,0)
