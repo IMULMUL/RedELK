@@ -22,7 +22,6 @@ def pprint(r):
  return(s)
 
 def getQuery(query,size="5000",index="redirtraffic-*"):
-  #NOT tags:enriched_v01 AND NOT c2logtype:beacon_newbeacon AND c2logtype:beacon_*
   q3 = {'query': {'query_string': {'query': query }}}
   r3 = es.search(index=index, body=q3, size=size)
   if(r3['hits']['total'] == 0):
@@ -30,7 +29,6 @@ def getQuery(query,size="5000",index="redirtraffic-*"):
   return(r3['hits']['hits'])
 
 def countQuery(query,index="redirtraffic-*"):
-  #NOT tags:enriched_v01 AND NOT c2logtype:beacon_newbeacon AND c2logtype:beacon_*
   q3 = {'query': {'query_string': {'query': query }}}
   r3 = es.search(index=index, body=q3, size=0)
   return(r3['hits']['total'])

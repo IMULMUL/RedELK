@@ -17,13 +17,13 @@
     "id": "10dcc4a0-b8e7-11e8-94dd-171ae5c1fd1a",
     "type": "visualization",
     "attributes": {
-      "title": "Top computers with new beacons",
+      "title": "Top computers with new implants",
       "visState": "{\"title\":\"Top computers with new beacons\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Amount of beacons\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"target_hostname.keyword\",\"size\":17,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Hostname\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"target_user.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Username\"}}]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype:beacon_newbeacon AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype:implant_newimplant AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
       }
     }
   },
@@ -34,7 +34,7 @@
       "title": "Beacons per top users with computers",
       "description": "",
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype:beacon_newbeacon AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype:implant_newimplant AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
       },
       "uiStateJSON": "{}",
       "version": 1,
@@ -48,7 +48,7 @@
       "title": "New Beacons over time",
       "description": "",
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: beacon_newbeacon\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: implant_newimplant\",\"language\":\"lucene\"},\"filter\":[]}"
       },
       "uiStateJSON": "{}",
       "version": 1,
@@ -62,7 +62,7 @@
       "title": "Top new beacons by ext IP address and scenario",
       "description": "",
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: beacon_newbeacon AND (NOT ( tags:sandboxes_v* OR tags:testsystems_v* )  )\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: implant_newimplant AND (NOT ( tags:sandboxes_v* OR tags:testsystems_v* )  )\",\"language\":\"lucene\"},\"filter\":[]}"
       },
       "uiStateJSON": "{}",
       "version": 1,
@@ -76,7 +76,7 @@
       "title": "Top new beacons by scenario",
       "description": "",
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: beacon_newbeacon AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: implant_newimplant AND (NOT (tags:sandboxes_v* OR tags:testsystems_v*))\",\"language\":\"lucene\"},\"filter\":[]}"
       },
       "uiStateJSON": "{}",
       "version": 1,
@@ -90,7 +90,7 @@
       "title": "Top users with new beacons",
       "description": "",
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: \\\"beacon_newbeacon\\\" AND (NOT tags: testsystems_V* )\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"query\":{\"query\":\"c2logtype: \\\"implant_newimplant\\\" AND (NOT tags: testsystems_V* )\",\"language\":\"lucene\"},\"filter\":[]}"
       },
       "uiStateJSON": "{}",
       "version": 1,
