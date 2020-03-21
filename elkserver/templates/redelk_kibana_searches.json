@@ -162,7 +162,7 @@
         "target_hostname",
         "target_user",
         "target_ipint",
-        "beacon_arch",
+        "implant_arch",
         "target_osversion",
         "target_ipext",
         "beacon_linkparentid"
