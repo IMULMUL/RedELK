@@ -35,7 +35,7 @@
         "attackscenario",
         "target_user",
         "target_ipint",
-        "beacon_id",
+        "implant_id",
         "target_hostname",
         "target_os",
         "target_osversion",
@@ -157,7 +157,7 @@
     "attributes": {
       "title": "Cobalt Strike Beacons",
       "columns": [
-        "beacon_id",
+        "implant_id",
         "attackscenario",
         "target_hostname",
         "target_user",

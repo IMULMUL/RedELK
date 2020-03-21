@@ -33,7 +33,7 @@ def isIP(addr):
 #### code for enrich_V1 tags
 def getInitialBeaconLine(l1):
   q2 = {'query': {'query_string': {'query': 'FILLME'}}}
-  q2['query']['query_string']['query'] = "beacon_id:\"%s\" AND c2logtype:beacon_newbeacon AND beat.name:%s"%(l1['_source']['beacon_id'],l1["_source"]['beat']['name'])
+  q2['query']['query_string']['query'] = "implant_id:\"%s\" AND c2logtype:beacon_newbeacon AND beat.name:%s"%(l1['_source']['implant_id'],l1["_source"]['beat']['name'])
   r2 = es.search(index="rtops-*", size=qSize,body=q2)
   b = r2['hits']['hits'][0]
   #now we have a beacon
@@ -43,7 +43,7 @@ def enrichAllLinesWithBeacon(l1,b):
   tagsSet = 0
   #query for all not enriched lines make new L1 lines
   q3 = {'query': {'query_string': {'query': 'FILLME'}}}
-  q3['query']['query_string']['query'] = "beacon_id:\"%s\" AND beat.name:%s AND NOT tags:enriched_v01"%(l1['_source']['beacon_id'],l1["_source"]['beat']['name'])
+  q3['query']['query_string']['query'] = "implant_id:\"%s\" AND beat.name:%s AND NOT tags:enriched_v01"%(l1['_source']['implant_id'],l1["_source"]['beat']['name'])
   r3 = es.search(index="rtops-*", size=qSize, body=q3)
   for l1 in r3['hits']['hits']:
     l1["_source"]['tags'].append("enriched_v01")
@@ -80,16 +80,16 @@ def enrichV1():
       #we have some rtop-* lines that should be enriched.
       for line in Set:
         try:
-          id = line['_source']['beacon_id']
+          id = line['_source']['implant_id']
         except:
           break
-        if line['_source']['beacon_id'] not in doneList:
+        if line['_source']['implant_id'] not in doneList:
           b = getInitialBeaconLine(line)
-          #sys.stdout.write('\n %s :'%b['_source']['beacon_id'])
+          #sys.stdout.write('\n %s :'%b['_source']['implant_id'])
           #sys.stdout.flush()
           newTags,rT2  = enrichAllLinesWithBeacon(line,b)
           tagsSet = tagsSet + newTags
-          doneList.append(b['_source']['beacon_id'])
+          doneList.append(b['_source']['implant_id'])
       #we might need a sleep here in order to allow ES to solve it's stuff. We could also just stop running as we would be restarted in a minute...
       #sleep(60)
       run = False # decided to never loop, cron will restart anyhows
