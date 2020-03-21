@@ -142,7 +142,7 @@
       "description": "",
       "hits": 0,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"rtops\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"beacon_output\",\"value\":\"\\\"received screenshot\\\"\",\"params\":{\"query\":\"\\\"received screenshot\\\"\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"beacon_output\":{\"query\":\"\\\"received screenshot\\\"\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"rtops\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"implant_output\",\"value\":\"\\\"received screenshot\\\"\",\"params\":{\"query\":\"\\\"received screenshot\\\"\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"implant_output\":{\"query\":\"\\\"received screenshot\\\"\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
       },
       "sort": [
         "@timestamp",
