@@ -17,8 +17,8 @@ def filter(event)
 	implant_id = event.get("implant_id")
 	temppath = logpath.split('/cobaltstrike')
 	temppath2 = temppath[1].split(/\/([^\/]*)$/)
-	beaconlogpath = "/cslogs/" + "#{host}" + "#{temppath[1]}"
+	implantlogpath = "/cslogs/" + "#{host}" + "#{temppath[1]}"
 	event.tag("_rubyparseok")
-    	event.set("beaconlogfile", beaconlogpath)
+    event.set("implantlogfile", implantlogpath)
 	return [event]
 end
