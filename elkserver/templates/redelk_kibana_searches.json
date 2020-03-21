@@ -165,7 +165,7 @@
         "implant_arch",
         "target_osversion",
         "target_ipext",
-        "beacon_linkparentid"
+        "implant_linkparentid"
       ],
       "description": "",
       "hits": 0,
