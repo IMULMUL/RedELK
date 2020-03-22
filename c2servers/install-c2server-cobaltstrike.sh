@@ -240,6 +240,21 @@ if [ $ERROR -ne 0 ]; then
     echoerror "Could not copy background running scripts (Error Code: $ERROR)."
 fi
 
+# things for CS data parsing
+echo "Installing Python3 pip"
+apt-get install -y python3-pip >> $LOGFILE 2>&1
+ERROR=$?
+if [ $ERROR -ne 0 ]; then
+    echoerror "Could not install Python3 pip (Error Code: $ERROR)."
+fi
+
+echo "Installing pip modules for CS .bin parsing"
+pip3 install javaobj-py3 >> $LOGFILE 2>&1
+ERROR=$?
+if [ $ERROR -ne 0 ]; then
+    echoerror "Could not install pip modules for .bin parsing (Error Code: $ERROR)."
+fi
+
 grep -i error $LOGFILE 2>&1
 ERROR=$?
 if [ $ERROR -eq 0 ]; then
