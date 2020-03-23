@@ -127,7 +127,7 @@ if [ $ERROR -ne 0 ]; then
 fi
 
 echo "Copying new config file"
-cp ./filebeat/filebeat_cobaltstrike.yml /etc/filebeat/ >> $LOGFILE 2>&1
+cp ./filebeat/filebeat_cobaltstrike.yml /etc/filebeat/filebeat.yml >> $LOGFILE 2>&1
 ERROR=$?
 if [ $ERROR -ne 0 ]; then
     echoerror "Could not copy filebeat config (Error Code: $ERROR)."
