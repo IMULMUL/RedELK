@@ -47,7 +47,7 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"rtops\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":true,\"index\":\"rtops\",\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events_joinleave\",\"params\":{\"query\":\"events_joinleave\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events_joinleave\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":true,\"index\":\"rtops\",\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events_newimplant\",\"params\":{\"query\":\"events_newimplant\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events_newimplant\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"rtops\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"weblog\",\"params\":{\"query\":\"weblog\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"weblog\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"rtops\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events\",\"params\":{\"query\":\"events\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        "searchSourceJSON": "{\"index\":\"rtops\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":true,\"index\":\"rtops\",\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events_joinleave\",\"params\":{\"query\":\"events_joinleave\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events_joinleave\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":true,\"index\":\"rtops\",\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events_newbeacon\",\"params\":{\"query\":\"events_newbeacon\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events_newbeacon\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"rtops\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"weblog\",\"params\":{\"query\":\"weblog\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"weblog\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"rtops\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"c2logtype\",\"value\":\"events\",\"params\":{\"query\":\"events\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"c2logtype\":{\"query\":\"events\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
       }
     }
   },
@@ -155,7 +155,7 @@
     "id": "68e8e870-b6aa-11e8-bc1a-cf8fa3255855",
     "type": "search",
     "attributes": {
-      "title": "C2 Implants overview",
+      "title": "Cobalt Strike Beacons",
       "columns": [
         "implant_id",
         "attackscenario",
